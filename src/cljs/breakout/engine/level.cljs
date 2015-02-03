@@ -93,7 +93,10 @@
 (defn- setup-next-level! [level]
   (let [brick-data (levels/get-level-data level)]
     (when brick-data
-      (reset! bricks brick-data)
+      ;; small hack -- by delaying the brick data, it allows
+      ;; React's CSSTransitionGroup to kick in, causing the bricks
+      ;; to appear on the board with a CSS animation
+      (.setTimeout js/window #(reset! bricks brick-data) 100)
       (reset! phase :countdown)
       true)))
 
@@ -170,6 +173,7 @@
   (reset! lives 3)
   (reset! score 0)
   (reset! level 0)
+  (reset! bricks #{})
   (setup-next-level! 0)
   (reset! last-ts nil)
   (reset! running true))
