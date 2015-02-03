@@ -66,12 +66,24 @@
 (defn- flip! [vel-atom key]
   (swap! vel-atom assoc key (- (key @vel-atom))))
 
+(defn- get-ball-center [pos]
+  [(+ (/ tile-size 2) (:x pos))
+   (+ (/ tile-size 2) (:y pos))])
+
+(defn- get-flip-direction [ball-pos brick]
+  (let [[_ cby] (get-ball-center ball-pos)
+        t (:y brick)
+        b (+ t (:height brick))]
+    (or
+      (and (> cby t) (< cby b) :x)
+      :y)))
+
 ;; determines the x velocity for the ball based on where
 ;; on the paddle the ball struck. The closer to the center
 ;; of the paddle, the closer to zero the x velocity
 (defn- get-x-vel-from-paddle-bounce [ball-pos paddle-pos]
   (let [half-paddle (/ (:width paddle-size) 2)
-        cbx (+ (/ tile-size 2) (:x ball-pos))
+        [cbx _] (get-ball-center ball-pos)
         cpx (+ half-paddle (:x paddle-pos))
         distance (- cbx cpx)
         ratio (/ distance half-paddle)]
@@ -123,8 +135,7 @@
                  (flip! ball-vel :y)
                  (swap! ball-vel assoc :x (get-x-vel-from-paddle-bounce new-pos pad-pos)))
       :brick   (do
-                 (flip! ball-vel :x)
-                 (flip! ball-vel :y)
+                 (flip! ball-vel (get-flip-direction new-pos collided-object))
                  (swap! score + 100)
                  (swap! bricks disj collided-object)
                  (when (zero? (count @bricks))
