@@ -5,6 +5,6 @@
                         :background-position "0 -64px"
                         :width "48px"
                         :height "16px"
-                        :left (:x @pos)
-                        :top (:y @pos)
+                        :left (:x pos)
+                        :top (:y pos)
                         :position "absolute"}}])

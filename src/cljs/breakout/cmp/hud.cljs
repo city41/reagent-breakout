@@ -6,4 +6,4 @@
                  :left 20
                  :right 20
                  :bottom 3}}
-   (str "lives: " @lives " score: " @score " level: " (inc @level))])
+   (str "lives: " lives " score: " score " level: " (inc level))])

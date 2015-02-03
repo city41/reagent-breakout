@@ -18,7 +18,7 @@
 (def countdown-duration (atom 3000))
 
 ;; --- state, there's a lot of it (this is a game after all)
-(def state (atom nil))
+(def phase (atom nil))
 (def running (atom nil))
 (def last-ts (atom nil))
 (def next-scene! (atom nil))
@@ -94,36 +94,36 @@
   (let [brick-data (levels/get-level-data level)]
     (when brick-data
       (reset! bricks brick-data)
-      (reset! state :countdown)
+      (reset! phase :countdown)
       true)))
 
 ;; --- state initialization
-;; called whenever a state transition within gameplay happens
-(defmulti init-state! identity)
+;; called whenever a phase transition within gameplay happens
+(defmulti init-phase! identity)
 
-(defmethod init-state! :countdown [_]
+(defmethod init-phase! :countdown [_]
   (reset! ball-pos starting-ball-pos)
   (reset! countdown-duration 3000))
 
-(defmethod init-state! :gameplay [_]
+(defmethod init-phase! :gameplay [_]
   (reset! ball-pos starting-ball-pos)
   (reset! ball-vel starting-ball-vel))
 
-(add-watch state :scene-state
-           (fn [key r old-state new-state]
-             (when new-state
-               (init-state! new-state))))
+(add-watch phase :scene-phase
+           (fn [key r old-phase new-phase]
+             (when new-phase
+               (init-phase! new-phase))))
 
-;; --- updating states
-;; called once per frame to update the current state
-(defmulti update-state! (fn [delta state] state))
+;; --- updating phases
+;; called once per frame to update the current phase
+(defmulti update-phase! (fn [delta phase] phase))
 
-(defmethod update-state! :countdown [delta _]
+(defmethod update-phase! :countdown [delta _]
   (swap! countdown-duration - delta)
   (when (<= @countdown-duration 0)
-    (reset! state :gameplay)))
+    (reset! phase :gameplay)))
 
-(defmethod update-state! :gameplay [delta _]
+(defmethod update-phase! :gameplay [delta _]
   (let [old-pos @ball-pos
         new-pos (move-ball delta old-pos @ball-vel)
         pad-pos @paddle-pos
@@ -146,14 +146,14 @@
                  (let [remaining-lives (swap! lives dec)]
                    (if (<= remaining-lives 0)
                      (@next-scene! :game-over)
-                     (reset! state :countdown)))
+                     (reset! phase :countdown)))
                  (reset! ball-pos new-pos)))))
 
 (defn- update! [ts]
   (when @running
     (let [delta (- ts (or @last-ts ts))]
       (reset! last-ts ts)
-      (update-state! delta @state))
+      (update-phase! delta @phase))
     (. js/window (requestAnimationFrame update!))))
 
 (defn- listen-to-mouse-moves! []

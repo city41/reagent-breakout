@@ -19,5 +19,5 @@
    [ctg {:transitionName "spawn"}
     (for [brick @bricks]
       ^{:key brick} [brick/cmp brick])]
-   [paddle/cmp paddle-pos]
-   [hud/cmp level score lives]])
+   [paddle/cmp @paddle-pos]
+   [hud/cmp @level @score @lives]])
