@@ -13,7 +13,8 @@
 (def ball-size {:width tile-size :height tile-size})
 (def paddle-size {:width 48 :height 16})
 (def starting-ball-pos {:x (* 2 tile-size) :y (* 15 tile-size)})
-(def starting-ball-vel {:x 2 :y 2})
+(def base-vel (/ 120 1000)) ; 120 pixels per second
+(def starting-ball-vel {:x base-vel :y base-vel})
 (def countdown-duration (atom 3000))
 
 ;; --- state, there's a lot of it (this is a game after all)
@@ -57,8 +58,8 @@
       [:none])))
 
 (defn- move-ball [delta pos vel]
-  (let [pos (update-in pos [:x] + (:x vel))]
-    (update-in pos [:y] + (:y vel))))
+  (let [pos (update-in pos [:x] + (* delta (:x vel)))]
+    (update-in pos [:y] + (* delta (:y vel)))))
 
 (defn- beyond-board? [pos]
   (>= (:y pos) (:height board)))
@@ -86,7 +87,7 @@
         cpx (get-center-x paddle-pos paddle-size)
         distance (- cbx cpx)
         ratio (/ distance half-paddle)]
-    (* 2.5 ratio))
+    (* 1.5 base-vel ratio))
   )
 
 (defn- setup-next-level! [level]
