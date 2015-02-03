@@ -1,10 +1,10 @@
 (ns breakout.cmp.countdown)
 
 (defn- get-frame [c]
-  (let [c (- 3000 c)
-        c (/ c 1000)
-        c (.floor js/Math c)]
-    c))
+  (->> c
+       (- 3000)
+       (* .001)
+       (.floor js/Math)))
 
 (defn cmp [count]
   (let [frame (get-frame count)] 
