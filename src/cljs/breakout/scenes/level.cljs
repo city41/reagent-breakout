@@ -10,4 +10,4 @@
              engine/level
              engine/score
              engine/lives
-             engine/countdown-duration])
+             engine/phase])
