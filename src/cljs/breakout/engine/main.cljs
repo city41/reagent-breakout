@@ -20,11 +20,10 @@
   (reset! current-scene next-scene))
 
 (add-watch current-scene :current-scene 
-           (fn [key r old-scene next-scene]
+           (fn [_ _ old-scene next-scene]
              (when old-scene
                ((stops old-scene)))
-             (when next-scene
-               ((starts next-scene) set-next-scene!))))
+             ((starts next-scene) set-next-scene!)))
 
 (defn start! []
   (reset! current-scene :title))

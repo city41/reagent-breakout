@@ -7,7 +7,7 @@
 
 (def ctg (aget js/React "addons" "CSSTransitionGroup"))
 
-(defn cmp [ball-pos ball-size bricks paddle-pos level score lives phase]
+(defn cmp [ball-pos bricks paddle-pos level score lives phase]
   [:div#board {:style {:position "relative"
                        :background-image "url(img/bg_prerendered.png)"
                        :width 320
@@ -15,7 +15,7 @@
    (when (= @phase :countdown)
      [countdown/cmp])
    (when @ball-pos
-     [ball/cmp @ball-pos ball-size])
+     [ball/cmp @ball-pos])
    [ctg {:transitionName "spawn"}
     (for [brick @bricks]
       ^{:key brick} [brick/cmp brick])]

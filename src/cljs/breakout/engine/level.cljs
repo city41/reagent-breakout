@@ -3,7 +3,7 @@
   (:require [cljs.core.async :refer [<!]]
             [reagent.core :refer [atom]]
             [breakout.engine.mouse :as mouse]
-            [breakout.levels.data :as levels :refer [brick-width brick-height]])
+            [breakout.levels.data :as levels])
   (:import goog.math.Rect))
 
 ;; --- constants
@@ -15,7 +15,6 @@
 (def starting-ball-pos {:x (* 2 tile-size) :y (* 15 tile-size)})
 (def base-vel (/ 120 1000)) ; 120 pixels per second
 (def starting-ball-vel {:x base-vel :y base-vel})
-(def countdown-duration (atom 3000))
 
 ;; --- state, there's a lot of it (this is a game after all)
 (def phase (atom nil))
@@ -29,6 +28,7 @@
 (def paddle-pos (atom {:x 0 :y paddle-y}))
 (def ball-pos (atom starting-ball-pos))
 (def ball-vel (atom starting-ball-vel))
+(def countdown-duration (atom 3000))
 
 ;; --- collision related
 ;; these functions detect collision and are called from update-state! :gameplay
@@ -70,12 +70,14 @@
 (defn- get-center-x [pos size]
   (+ (/ (:width size) 2) (:x pos)))
 
+;; TODO this is too primitive, in many situations it
+;; does not pick the correct direction to flip
 (defn- get-flip-direction [ball-pos brick]
   (let [cbx (get-center-x ball-pos ball-size)
         left (get-in brick [:pos :x])
         right (+ left (:width brick))]
-    (or
-      (and (> cbx left) (< cbx right) :y)
+    (if (and (> cbx left) (< cbx right))
+      :y
       :x)))
 
 ;; determines the x velocity for the ball based on where
@@ -87,8 +89,7 @@
         cpx (get-center-x paddle-pos paddle-size)
         distance (- cbx cpx)
         ratio (/ distance half-paddle)]
-    (* 1.5 base-vel ratio))
-  )
+    (* 1.5 base-vel ratio)))
 
 (defn- setup-next-level! [level]
   (let [brick-data (levels/get-level-data level)]
@@ -97,8 +98,7 @@
       ;; React's CSSTransitionGroup to kick in, causing the bricks
       ;; to appear on the board with a CSS animation
       (.setTimeout js/window #(reset! bricks brick-data) 100)
-      (reset! phase :countdown)
-      true)))
+      (reset! phase :countdown))))
 
 ;; --- state initialization
 ;; called whenever a phase transition within gameplay happens
@@ -112,8 +112,8 @@
   (reset! ball-pos starting-ball-pos)
   (reset! ball-vel starting-ball-vel))
 
-(add-watch phase :scene-phase
-           (fn [key r old-phase new-phase]
+(add-watch phase :phase
+           (fn [_ _ _ new-phase]
              (when new-phase
                (init-phase! new-phase))))
 

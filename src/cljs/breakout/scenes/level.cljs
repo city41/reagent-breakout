@@ -4,7 +4,6 @@
 
 (defn scene []
   [board/cmp engine/ball-pos
-             engine/ball-size
              engine/bricks
              engine/paddle-pos
              engine/level

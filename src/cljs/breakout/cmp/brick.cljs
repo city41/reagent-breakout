@@ -5,12 +5,12 @@
                        "red"    2
                        "green"  3})
 
-(defn cmp [{pos :pos color :color w :width h :height :as state}]
+(defn cmp [{pos :pos color :color}]
   [:div.brick {:class color
                :style {:background-image "url(img/tiles.png)"
-                       :background-position (str "0 " (* (offset color) (- h)) "px")
+                       :background-position (str "0 " (* (offset color) -16) "px")
                        :position "absolute"
-                       :width w
-                       :height h
+                       :width 32
+                       :height 16
                        :top (:y pos)
                        :left (:x pos)}}])

@@ -7,3 +7,4 @@
                  :right 20
                  :bottom 3}}
    (str "lives: " lives " score: " score " level: " (inc level))])
+

@@ -1,7 +1,6 @@
 (ns breakout.core
   (:require [reagent.core :as reagent]
             [breakout.engine.main :as main]
-            [breakout.engine.level :as engine]
             [breakout.scenes.level :as level]
             [breakout.scenes.title :as title]
             [breakout.scenes.game-over :as game-over]

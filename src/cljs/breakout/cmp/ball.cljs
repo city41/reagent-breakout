@@ -1,9 +1,9 @@
 (ns breakout.cmp.ball)
 
-(defn cmp [pos size]
+(defn cmp [{x :x y :y}]
   [:div.ball {:style {:background-image "url(img/tiles.png)"
                       :position "absolute"
-                      :width (:width size)
-                      :height (:height size)
-                      :top (:y pos)
-                      :left (:x pos)}}])
+                      :width 16
+                      :height 16
+                      :top y
+                      :left x}}])

@@ -23,7 +23,7 @@
                  [leiningen "2.5.1"]
                  [figwheel "0.1.6-SNAPSHOT"]]
 
-  :plugins [
+  :plugins [[lein-vanity "0.2.0"]
             [lein-cljsbuild "1.0.4"]
             [lein-environ "1.0.0"]
             [lein-ring "0.9.0"]
