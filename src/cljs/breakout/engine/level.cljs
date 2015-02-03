@@ -3,7 +3,7 @@
   (:require [cljs.core.async :refer [<!]]
             [reagent.core :refer [atom]]
             [breakout.engine.mouse :as mouse]
-            [breakout.levels.core :as levels :refer [brick-width brick-height]])
+            [breakout.levels.data :as levels :refer [brick-width brick-height]])
   (:import goog.math.Rect))
 
 ;; --- constants

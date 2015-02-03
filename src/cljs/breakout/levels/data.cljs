@@ -1,4 +1,4 @@
-(ns breakout.levels.core
+(ns breakout.levels.data
   (:import goog.math.Rect))
 
 (def ^:private X nil)
