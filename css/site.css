@@ -699,6 +699,40 @@ body {
   }
 }
 
+.countdown {
+  -webkit-animation-name: countdown;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-iteration-count: 1;
+
+  -moz-animation-name: countdown;
+  -moz-animation-duration: 3s;
+  -moz-animation-iteration-count: 1;
+
+  background-position: -64px -96px;
+}
+
+@-webkit-keyframes countdown {
+  0% {
+    background-position: 0 -96px;
+  }
+  32.99% {
+    background-position: 0 -96px;
+  }
+  33% {
+    background-position: -32px -96px;
+  }
+  65.99% {
+    background-position: -32px -96px;
+  }
+  66% {
+    background-position: -64px -96px;
+  }
+  100% {
+    background-position: -64px -96px;
+  }
+}
+
+
 #board {
   cursor: none;
 }
