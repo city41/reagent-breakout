@@ -14,6 +14,85 @@ body {
   margin-top: 60px;
 }
 
+.ball {
+  background-position: -48px -64px;
+  -webkit-animation-name: ball-spin;
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-iteration-count: infinite;
+
+  -moz-animation-name: ball-spin;
+  -moz-animation-duration: 0.5s;
+  -moz-animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes ball-spin {
+  0% {
+    background-position: -48px -64px;
+  }
+  19.99% {
+    background-position: -48px -64px;
+  }
+  20% {
+    background-position: -64px -64px;
+  }
+  39.99% {
+    background-position: -64px -64px;
+  }
+  40% {
+    background-position: -80px -64px;
+  }
+  59.99% {
+    background-position: -80px -64px;
+  }
+  60% {
+    background-position: -96px -64px;
+  }
+  79.99% {
+    background-position: -96px -64px;
+  }
+  80% {
+    background-position: -112px -64px;
+  }
+  100% {
+    background-position: -112px -64px;
+  }
+}
+
+@-moz-keyframes ball-spin {
+  0% {
+    background-position: -48px -64px;
+  }
+  19.99% {
+    background-position: -48px -64px;
+  }
+  20% {
+    background-position: -64px -64px;
+  }
+  39.99% {
+    background-position: -64px -64px;
+  }
+  40% {
+    background-position: -80px -64px;
+  }
+  59.99% {
+    background-position: -80px -64px;
+  }
+  60% {
+    background-position: -96px -64px;
+  }
+  79.99% {
+    background-position: -96px -64px;
+  }
+  80% {
+    background-position: -112px -64px;
+  }
+  100% {
+    background-position: -112px -64px;
+  }
+}
+
+
+
 .brick.spawn-enter {
   opacity: 0.01;
   transition: opacity 1s ease-out;
