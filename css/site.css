@@ -91,24 +91,612 @@ body {
   }
 }
 
+.brick.blue.spawn-enter {
+  -webkit-animation-name: blue-brick-enter;
+  -webkit-animation-duration: 0.33s;
+  -webkit-animation-iteration-count: 1;
 
-
-.brick.spawn-enter {
-  opacity: 0.01;
-  transition: opacity 1s ease-out;
+  -moz-animation-name: blue-brick-enter;
+  -moz-animation-duration: 0.33s;
+  -moz-animation-iteration-count: 1;
 }
 
-.brick.spawn-enter-active {
-  opacity: 1;
+.brick.blue.spawn-leave {
+  -webkit-animation-name: blue-brick-leave;
+  -webkit-animation-duration: 0.33s;
+  -webkit-animation-iteration-count: 1;
+
+  -moz-animation-name: blue-brick-leave;
+  -moz-animation-duration: 0.33s;
+  -moz-animation-iteration-count: 1;
 }
 
-.brick.spawn-leave {
-  opacity: 1;
-  transition: opacity 1s ease-out;
+@-webkit-keyframes blue-brick-enter {
+  0% {
+    background-position: -128px 0;
+  }
+  19.99% {
+    background-position: -128px 0;
+  }
+  20% {
+    background-position: -96px 0;
+  }
+  39.99% {
+    background-position: -96px 0;
+  }
+  40% {
+    background-position: -64px 0;
+  }
+  59.99% {
+    background-position: -64px 0;
+  }
+  60% {
+    background-position: -32px 0;
+  }
+  79.99% {
+    background-position: -32px 0;
+  }
+  80% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
 }
 
-.brick.spawn-leave-active {
-  opacity: 0.01;
+@-webkit-keyframes blue-brick-leave {
+  0% {
+    background-position: 0 0;
+  }
+  19.99% {
+    background-position: 0 0;
+  }
+  20% {
+    background-position: -32px 0;
+  }
+  39.99% {
+    background-position: -32px 0;
+  }
+  40% {
+    background-position: -64px 0;
+  }
+  59.99% {
+    background-position: -64px 0;
+  }
+  60% {
+    background-position: -96px 0;
+  }
+  79.99% {
+    background-position: -96px 0;
+  }
+  80% {
+    background-position: -128px 0;
+  }
+  100% {
+    background-position: -128px 0;
+  }
+}
+
+@-moz-keyframes blue-brick-enter {
+  0% {
+    background-position: -128px 0;
+  }
+  19.99% {
+    background-position: -128px 0;
+  }
+  20% {
+    background-position: -96px 0;
+  }
+  39.99% {
+    background-position: -96px 0;
+  }
+  40% {
+    background-position: -64px 0;
+  }
+  59.99% {
+    background-position: -64px 0;
+  }
+  60% {
+    background-position: -32px 0;
+  }
+  79.99% {
+    background-position: -32px 0;
+  }
+  80% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+@-moz-keyframes blue-brick-leave {
+  0% {
+    background-position: 0 0;
+  }
+  19.99% {
+    background-position: 0 0;
+  }
+  20% {
+    background-position: -32px 0;
+  }
+  39.99% {
+    background-position: -32px 0;
+  }
+  40% {
+    background-position: -64px 0;
+  }
+  59.99% {
+    background-position: -64px 0;
+  }
+  60% {
+    background-position: -96px 0;
+  }
+  79.99% {
+    background-position: -96px 0;
+  }
+  80% {
+    background-position: -128px 0;
+  }
+  100% {
+    background-position: -128px 0;
+  }
+}
+
+.brick.orange.spawn-enter {
+  -webkit-animation-name: orange-brick-enter;
+  -webkit-animation-duration: 0.33s;
+  -webkit-animation-iteration-count: 1;
+
+  -moz-animation-name: orange-brick-enter;
+  -moz-animation-duration: 0.33s;
+  -moz-animation-iteration-count: 1;
+}
+
+.brick.orange.spawn-leave {
+  -webkit-animation-name: orange-brick-leave;
+  -webkit-animation-duration: 0.33s;
+  -webkit-animation-iteration-count: 1;
+
+  -moz-animation-name: orange-brick-leave;
+  -moz-animation-duration: 0.33s;
+  -moz-animation-iteration-count: 1;
+}
+
+@-webkit-keyframes orange-brick-enter {
+  0% {
+    background-position: -128px -16px;
+  }
+  19.99% {
+    background-position: -128px -16px;
+  }
+  20% {
+    background-position: -96px -16px;
+  }
+  39.99% {
+    background-position: -96px -16px;
+  }
+  40% {
+    background-position: -64px -16px;
+  }
+  59.99% {
+    background-position: -64px -16px;
+  }
+  60% {
+    background-position: -32px -16px;
+  }
+  79.99% {
+    background-position: -32px -16px;
+  }
+  80% {
+    background-position: 0 -16px;
+  }
+  100% {
+    background-position: 0 -16px;
+  }
+}
+
+@-webkit-keyframes orange-brick-leave {
+  0% {
+    background-position: 0 -16px;
+  }
+  19.99% {
+    background-position: 0 -16px;
+  }
+  20% {
+    background-position: -32px -16px;
+  }
+  39.99% {
+    background-position: -32px -16px;
+  }
+  40% {
+    background-position: -64px -16px;
+  }
+  59.99% {
+    background-position: -64px -16px;
+  }
+  60% {
+    background-position: -96px -16px;
+  }
+  79.99% {
+    background-position: -96px -16px;
+  }
+  80% {
+    background-position: -128px -16px;
+  }
+  100% {
+    background-position: -128px -16px;
+  }
+}
+
+@-moz-keyframes orange-brick-enter {
+  0% {
+    background-position: -128px -16px;
+  }
+  19.99% {
+    background-position: -128px -16px;
+  }
+  20% {
+    background-position: -96px -16px;
+  }
+  39.99% {
+    background-position: -96px -16px;
+  }
+  40% {
+    background-position: -64px -16px;
+  }
+  59.99% {
+    background-position: -64px -16px;
+  }
+  60% {
+    background-position: -32px -16px;
+  }
+  79.99% {
+    background-position: -32px -16px;
+  }
+  80% {
+    background-position: 0 -16px;
+  }
+  100% {
+    background-position: 0 -16px;
+  }
+}
+
+@-moz-keyframes orange-brick-leave {
+  0% {
+    background-position: 0 -16px;
+  }
+  19.99% {
+    background-position: 0 -16px;
+  }
+  20% {
+    background-position: -32px -16px;
+  }
+  39.99% {
+    background-position: -32px -16px;
+  }
+  40% {
+    background-position: -64px -16px;
+  }
+  59.99% {
+    background-position: -64px -16px;
+  }
+  60% {
+    background-position: -96px -16px;
+  }
+  79.99% {
+    background-position: -96px -16px;
+  }
+  80% {
+    background-position: -128px -16px;
+  }
+  100% {
+    background-position: -128px -16px;
+  }
+}
+
+.brick.red.spawn-enter {
+  -webkit-animation-name: red-brick-enter;
+  -webkit-animation-duration: 0.33s;
+  -webkit-animation-iteration-count: 1;
+
+  -moz-animation-name: red-brick-enter;
+  -moz-animation-duration: 0.33s;
+  -moz-animation-iteration-count: 1;
+}
+
+.brick.red.spawn-leave {
+  -webkit-animation-name: red-brick-leave;
+  -webkit-animation-duration: 0.33s;
+  -webkit-animation-iteration-count: 1;
+
+  -moz-animation-name: red-brick-leave;
+  -moz-animation-duration: 0.33s;
+  -moz-animation-iteration-count: 1;
+}
+
+@-webkit-keyframes red-brick-enter {
+  0% {
+    background-position: -128px -32px;
+  }
+  19.99% {
+    background-position: -128px -32px;
+  }
+  20% {
+    background-position: -96px -32px;
+  }
+  39.99% {
+    background-position: -96px -32px;
+  }
+  40% {
+    background-position: -64px -32px;
+  }
+  59.99% {
+    background-position: -64px -32px;
+  }
+  60% {
+    background-position: -32px -32px;
+  }
+  79.99% {
+    background-position: -32px -32px;
+  }
+  80% {
+    background-position: 0 -32px;
+  }
+  100% {
+    background-position: 0 -32px;
+  }
+}
+
+@-webkit-keyframes red-brick-leave {
+  0% {
+    background-position: 0 -32px;
+  }
+  19.99% {
+    background-position: 0 -32px;
+  }
+  20% {
+    background-position: -32px -32px;
+  }
+  39.99% {
+    background-position: -32px -32px;
+  }
+  40% {
+    background-position: -64px -32px;
+  }
+  59.99% {
+    background-position: -64px -32px;
+  }
+  60% {
+    background-position: -96px -32px;
+  }
+  79.99% {
+    background-position: -96px -32px;
+  }
+  80% {
+    background-position: -128px -32px;
+  }
+  100% {
+    background-position: -128px -32px;
+  }
+}
+
+@-moz-keyframes red-brick-enter {
+  0% {
+    background-position: -128px -32px;
+  }
+  19.99% {
+    background-position: -128px -32px;
+  }
+  20% {
+    background-position: -96px -32px;
+  }
+  39.99% {
+    background-position: -96px -32px;
+  }
+  40% {
+    background-position: -64px -32px;
+  }
+  59.99% {
+    background-position: -64px -32px;
+  }
+  60% {
+    background-position: -32px -32px;
+  }
+  79.99% {
+    background-position: -32px -32px;
+  }
+  80% {
+    background-position: 0 -32px;
+  }
+  100% {
+    background-position: 0 -32px;
+  }
+}
+
+@-moz-keyframes red-brick-leave {
+  0% {
+    background-position: 0 -32px;
+  }
+  19.99% {
+    background-position: 0 -32px;
+  }
+  20% {
+    background-position: -32px -32px;
+  }
+  39.99% {
+    background-position: -32px -32px;
+  }
+  40% {
+    background-position: -64px -32px;
+  }
+  59.99% {
+    background-position: -64px -32px;
+  }
+  60% {
+    background-position: -96px -32px;
+  }
+  79.99% {
+    background-position: -96px -32px;
+  }
+  80% {
+    background-position: -128px -32px;
+  }
+  100% {
+    background-position: -128px -32px;
+  }
+}
+
+.brick.green.spawn-enter {
+  -webkit-animation-name: green-brick-enter;
+  -webkit-animation-duration: 0.33s;
+  -webkit-animation-iteration-count: 1;
+
+  -moz-animation-name: green-brick-enter;
+  -moz-animation-duration: 0.33s;
+  -moz-animation-iteration-count: 1;
+}
+
+.brick.green.spawn-leave {
+  -webkit-animation-name: green-brick-leave;
+  -webkit-animation-duration: 0.33s;
+  -webkit-animation-iteration-count: 1;
+
+  -moz-animation-name: green-brick-leave;
+  -moz-animation-duration: 0.33s;
+  -moz-animation-iteration-count: 1;
+}
+
+@-webkit-keyframes green-brick-enter {
+  0% {
+    background-position: -128px -48px;
+  }
+  19.99% {
+    background-position: -128px -48px;
+  }
+  20% {
+    background-position: -96px -48px;
+  }
+  39.99% {
+    background-position: -96px -48px;
+  }
+  40% {
+    background-position: -64px -48px;
+  }
+  59.99% {
+    background-position: -64px -48px;
+  }
+  60% {
+    background-position: -32px -48px;
+  }
+  79.99% {
+    background-position: -32px -48px;
+  }
+  80% {
+    background-position: 0 -48px;
+  }
+  100% {
+    background-position: 0 -48px;
+  }
+}
+
+@-webkit-keyframes green-brick-leave {
+  0% {
+    background-position: 0 -48px;
+  }
+  19.99% {
+    background-position: 0 -48px;
+  }
+  20% {
+    background-position: -32px -48px;
+  }
+  39.99% {
+    background-position: -32px -48px;
+  }
+  40% {
+    background-position: -64px -48px;
+  }
+  59.99% {
+    background-position: -64px -48px;
+  }
+  60% {
+    background-position: -96px -48px;
+  }
+  79.99% {
+    background-position: -96px -48px;
+  }
+  80% {
+    background-position: -128px -48px;
+  }
+  100% {
+    background-position: -128px -48px;
+  }
+}
+
+@-moz-keyframes green-brick-enter {
+  0% {
+    background-position: -128px -48px;
+  }
+  19.99% {
+    background-position: -128px -48px;
+  }
+  20% {
+    background-position: -96px -48px;
+  }
+  39.99% {
+    background-position: -96px -48px;
+  }
+  40% {
+    background-position: -64px -48px;
+  }
+  59.99% {
+    background-position: -64px -48px;
+  }
+  60% {
+    background-position: -32px -48px;
+  }
+  79.99% {
+    background-position: -32px -48px;
+  }
+  80% {
+    background-position: 0 -48px;
+  }
+  100% {
+    background-position: 0 -48px;
+  }
+}
+
+@-moz-keyframes green-brick-leave {
+  0% {
+    background-position: 0 -48px;
+  }
+  19.99% {
+    background-position: 0 -48px;
+  }
+  20% {
+    background-position: -32px -48px;
+  }
+  39.99% {
+    background-position: -32px -48px;
+  }
+  40% {
+    background-position: -64px -48px;
+  }
+  59.99% {
+    background-position: -64px -48px;
+  }
+  60% {
+    background-position: -96px -48px;
+  }
+  79.99% {
+    background-position: -96px -48px;
+  }
+  80% {
+    background-position: -128px -48px;
+  }
+  100% {
+    background-position: -128px -48px;
+  }
 }
 
 #board {
