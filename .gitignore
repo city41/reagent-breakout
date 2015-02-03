@@ -10,3 +10,6 @@ pom.xml.asc
 /resources/public/js/out
 /.repl
 .DS_Store
+system.properties
+Procfile
+
