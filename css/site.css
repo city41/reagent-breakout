@@ -14,6 +14,17 @@ body {
   width: 320px;
 }
 
+#info {
+  color: white;
+  margin: 60px auto 0 auto;
+  width: 320px;
+}
+
+#info a, #info a:visited, #info a:hover, #info a:active {
+  text-decoration: none;
+  color: orange;
+}
+
 .ball {
   background-position: -48px -64px;
   animation-iteration-count: infinite;
