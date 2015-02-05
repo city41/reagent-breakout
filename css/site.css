@@ -1,769 +1,627 @@
 body {
-  font-family: 'Helvetica Neue', Verdana, Helvetica, Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  -webkit-font-smoothing: antialiased;
-  font-size: 1.125em;
   background-color: black;
+  font-size: 1.125em;
+  padding: 0;
+  margin: 0;
+  font-family: Helvetica Neue, Verdana, Heveltica, Arial, sans-serif;
 }
 
 #app {
-  width: 320px;
-  margin-left: auto;
-  margin-right: auto;
   margin-top: 60px;
+  margin-right: auto;
+  margin-left: auto;
+  cursor: none;
+  width: 320px;
 }
 
 .ball {
   background-position: -48px -64px;
-  -webkit-animation-name: ball-spin;
-  -webkit-animation-duration: 0.5s;
+  animation-iteration-count: infinite;
   -webkit-animation-iteration-count: infinite;
-
-  -moz-animation-name: ball-spin;
-  -moz-animation-duration: 0.5s;
   -moz-animation-iteration-count: infinite;
-}
-
-@-webkit-keyframes ball-spin {
-  0% {
-    background-position: -48px -64px;
-  }
-  19.99% {
-    background-position: -48px -64px;
-  }
-  20% {
-    background-position: -64px -64px;
-  }
-  39.99% {
-    background-position: -64px -64px;
-  }
-  40% {
-    background-position: -80px -64px;
-  }
-  59.99% {
-    background-position: -80px -64px;
-  }
-  60% {
-    background-position: -96px -64px;
-  }
-  79.99% {
-    background-position: -96px -64px;
-  }
-  80% {
-    background-position: -112px -64px;
-  }
-  100% {
-    background-position: -112px -64px;
-  }
-}
-
-@-moz-keyframes ball-spin {
-  0% {
-    background-position: -48px -64px;
-  }
-  19.99% {
-    background-position: -48px -64px;
-  }
-  20% {
-    background-position: -64px -64px;
-  }
-  39.99% {
-    background-position: -64px -64px;
-  }
-  40% {
-    background-position: -80px -64px;
-  }
-  59.99% {
-    background-position: -80px -64px;
-  }
-  60% {
-    background-position: -96px -64px;
-  }
-  79.99% {
-    background-position: -96px -64px;
-  }
-  80% {
-    background-position: -112px -64px;
-  }
-  100% {
-    background-position: -112px -64px;
-  }
-}
-
-.brick.blue.spawn-enter {
-  -webkit-animation-name: blue-brick-enter;
-  -webkit-animation-duration: 0.33s;
-  -webkit-animation-iteration-count: 1;
-
-  -moz-animation-name: blue-brick-enter;
-  -moz-animation-duration: 0.33s;
-  -moz-animation-iteration-count: 1;
-}
-
-.brick.blue.spawn-leave {
-  -webkit-animation-name: blue-brick-leave;
-  -webkit-animation-duration: 0.33s;
-  -webkit-animation-iteration-count: 1;
-
-  -moz-animation-name: blue-brick-leave;
-  -moz-animation-duration: 0.33s;
-  -moz-animation-iteration-count: 1;
-}
-
-@-webkit-keyframes blue-brick-enter {
-  0% {
-    background-position: -128px 0;
-  }
-  19.99% {
-    background-position: -128px 0;
-  }
-  20% {
-    background-position: -96px 0;
-  }
-  39.99% {
-    background-position: -96px 0;
-  }
-  40% {
-    background-position: -64px 0;
-  }
-  59.99% {
-    background-position: -64px 0;
-  }
-  60% {
-    background-position: -32px 0;
-  }
-  79.99% {
-    background-position: -32px 0;
-  }
-  80% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 0 0;
-  }
-}
-
-@-webkit-keyframes blue-brick-leave {
-  0% {
-    background-position: 0 0;
-  }
-  19.99% {
-    background-position: 0 0;
-  }
-  20% {
-    background-position: -32px 0;
-  }
-  39.99% {
-    background-position: -32px 0;
-  }
-  40% {
-    background-position: -64px 0;
-  }
-  59.99% {
-    background-position: -64px 0;
-  }
-  60% {
-    background-position: -96px 0;
-  }
-  79.99% {
-    background-position: -96px 0;
-  }
-  80% {
-    background-position: -128px 0;
-  }
-  100% {
-    background-position: -128px 0;
-  }
-}
-
-@-moz-keyframes blue-brick-enter {
-  0% {
-    background-position: -128px 0;
-  }
-  19.99% {
-    background-position: -128px 0;
-  }
-  20% {
-    background-position: -96px 0;
-  }
-  39.99% {
-    background-position: -96px 0;
-  }
-  40% {
-    background-position: -64px 0;
-  }
-  59.99% {
-    background-position: -64px 0;
-  }
-  60% {
-    background-position: -32px 0;
-  }
-  79.99% {
-    background-position: -32px 0;
-  }
-  80% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 0 0;
-  }
-}
-
-@-moz-keyframes blue-brick-leave {
-  0% {
-    background-position: 0 0;
-  }
-  19.99% {
-    background-position: 0 0;
-  }
-  20% {
-    background-position: -32px 0;
-  }
-  39.99% {
-    background-position: -32px 0;
-  }
-  40% {
-    background-position: -64px 0;
-  }
-  59.99% {
-    background-position: -64px 0;
-  }
-  60% {
-    background-position: -96px 0;
-  }
-  79.99% {
-    background-position: -96px 0;
-  }
-  80% {
-    background-position: -128px 0;
-  }
-  100% {
-    background-position: -128px 0;
-  }
-}
-
-.brick.orange.spawn-enter {
-  -webkit-animation-name: orange-brick-enter;
-  -webkit-animation-duration: 0.33s;
-  -webkit-animation-iteration-count: 1;
-
-  -moz-animation-name: orange-brick-enter;
-  -moz-animation-duration: 0.33s;
-  -moz-animation-iteration-count: 1;
-}
-
-.brick.orange.spawn-leave {
-  -webkit-animation-name: orange-brick-leave;
-  -webkit-animation-duration: 0.33s;
-  -webkit-animation-iteration-count: 1;
-
-  -moz-animation-name: orange-brick-leave;
-  -moz-animation-duration: 0.33s;
-  -moz-animation-iteration-count: 1;
-}
-
-@-webkit-keyframes orange-brick-enter {
-  0% {
-    background-position: -128px -16px;
-  }
-  19.99% {
-    background-position: -128px -16px;
-  }
-  20% {
-    background-position: -96px -16px;
-  }
-  39.99% {
-    background-position: -96px -16px;
-  }
-  40% {
-    background-position: -64px -16px;
-  }
-  59.99% {
-    background-position: -64px -16px;
-  }
-  60% {
-    background-position: -32px -16px;
-  }
-  79.99% {
-    background-position: -32px -16px;
-  }
-  80% {
-    background-position: 0 -16px;
-  }
-  100% {
-    background-position: 0 -16px;
-  }
-}
-
-@-webkit-keyframes orange-brick-leave {
-  0% {
-    background-position: 0 -16px;
-  }
-  19.99% {
-    background-position: 0 -16px;
-  }
-  20% {
-    background-position: -32px -16px;
-  }
-  39.99% {
-    background-position: -32px -16px;
-  }
-  40% {
-    background-position: -64px -16px;
-  }
-  59.99% {
-    background-position: -64px -16px;
-  }
-  60% {
-    background-position: -96px -16px;
-  }
-  79.99% {
-    background-position: -96px -16px;
-  }
-  80% {
-    background-position: -128px -16px;
-  }
-  100% {
-    background-position: -128px -16px;
-  }
-}
-
-@-moz-keyframes orange-brick-enter {
-  0% {
-    background-position: -128px -16px;
-  }
-  19.99% {
-    background-position: -128px -16px;
-  }
-  20% {
-    background-position: -96px -16px;
-  }
-  39.99% {
-    background-position: -96px -16px;
-  }
-  40% {
-    background-position: -64px -16px;
-  }
-  59.99% {
-    background-position: -64px -16px;
-  }
-  60% {
-    background-position: -32px -16px;
-  }
-  79.99% {
-    background-position: -32px -16px;
-  }
-  80% {
-    background-position: 0 -16px;
-  }
-  100% {
-    background-position: 0 -16px;
-  }
-}
-
-@-moz-keyframes orange-brick-leave {
-  0% {
-    background-position: 0 -16px;
-  }
-  19.99% {
-    background-position: 0 -16px;
-  }
-  20% {
-    background-position: -32px -16px;
-  }
-  39.99% {
-    background-position: -32px -16px;
-  }
-  40% {
-    background-position: -64px -16px;
-  }
-  59.99% {
-    background-position: -64px -16px;
-  }
-  60% {
-    background-position: -96px -16px;
-  }
-  79.99% {
-    background-position: -96px -16px;
-  }
-  80% {
-    background-position: -128px -16px;
-  }
-  100% {
-    background-position: -128px -16px;
-  }
-}
-
-.brick.red.spawn-enter {
-  -webkit-animation-name: red-brick-enter;
-  -webkit-animation-duration: 0.33s;
-  -webkit-animation-iteration-count: 1;
-
-  -moz-animation-name: red-brick-enter;
-  -moz-animation-duration: 0.33s;
-  -moz-animation-iteration-count: 1;
-}
-
-.brick.red.spawn-leave {
-  -webkit-animation-name: red-brick-leave;
-  -webkit-animation-duration: 0.33s;
-  -webkit-animation-iteration-count: 1;
-
-  -moz-animation-name: red-brick-leave;
-  -moz-animation-duration: 0.33s;
-  -moz-animation-iteration-count: 1;
-}
-
-@-webkit-keyframes red-brick-enter {
-  0% {
-    background-position: -128px -32px;
-  }
-  19.99% {
-    background-position: -128px -32px;
-  }
-  20% {
-    background-position: -96px -32px;
-  }
-  39.99% {
-    background-position: -96px -32px;
-  }
-  40% {
-    background-position: -64px -32px;
-  }
-  59.99% {
-    background-position: -64px -32px;
-  }
-  60% {
-    background-position: -32px -32px;
-  }
-  79.99% {
-    background-position: -32px -32px;
-  }
-  80% {
-    background-position: 0 -32px;
-  }
-  100% {
-    background-position: 0 -32px;
-  }
-}
-
-@-webkit-keyframes red-brick-leave {
-  0% {
-    background-position: 0 -32px;
-  }
-  19.99% {
-    background-position: 0 -32px;
-  }
-  20% {
-    background-position: -32px -32px;
-  }
-  39.99% {
-    background-position: -32px -32px;
-  }
-  40% {
-    background-position: -64px -32px;
-  }
-  59.99% {
-    background-position: -64px -32px;
-  }
-  60% {
-    background-position: -96px -32px;
-  }
-  79.99% {
-    background-position: -96px -32px;
-  }
-  80% {
-    background-position: -128px -32px;
-  }
-  100% {
-    background-position: -128px -32px;
-  }
-}
-
-@-moz-keyframes red-brick-enter {
-  0% {
-    background-position: -128px -32px;
-  }
-  19.99% {
-    background-position: -128px -32px;
-  }
-  20% {
-    background-position: -96px -32px;
-  }
-  39.99% {
-    background-position: -96px -32px;
-  }
-  40% {
-    background-position: -64px -32px;
-  }
-  59.99% {
-    background-position: -64px -32px;
-  }
-  60% {
-    background-position: -32px -32px;
-  }
-  79.99% {
-    background-position: -32px -32px;
-  }
-  80% {
-    background-position: 0 -32px;
-  }
-  100% {
-    background-position: 0 -32px;
-  }
-}
-
-@-moz-keyframes red-brick-leave {
-  0% {
-    background-position: 0 -32px;
-  }
-  19.99% {
-    background-position: 0 -32px;
-  }
-  20% {
-    background-position: -32px -32px;
-  }
-  39.99% {
-    background-position: -32px -32px;
-  }
-  40% {
-    background-position: -64px -32px;
-  }
-  59.99% {
-    background-position: -64px -32px;
-  }
-  60% {
-    background-position: -96px -32px;
-  }
-  79.99% {
-    background-position: -96px -32px;
-  }
-  80% {
-    background-position: -128px -32px;
-  }
-  100% {
-    background-position: -128px -32px;
-  }
-}
-
-.brick.green.spawn-enter {
-  -webkit-animation-name: green-brick-enter;
-  -webkit-animation-duration: 0.33s;
-  -webkit-animation-iteration-count: 1;
-
-  -moz-animation-name: green-brick-enter;
-  -moz-animation-duration: 0.33s;
-  -moz-animation-iteration-count: 1;
-}
-
-.brick.green.spawn-leave {
-  -webkit-animation-name: green-brick-leave;
-  -webkit-animation-duration: 0.33s;
-  -webkit-animation-iteration-count: 1;
-
-  -moz-animation-name: green-brick-leave;
-  -moz-animation-duration: 0.33s;
-  -moz-animation-iteration-count: 1;
-}
-
-@-webkit-keyframes green-brick-enter {
-  0% {
-    background-position: -128px -48px;
-  }
-  19.99% {
-    background-position: -128px -48px;
-  }
-  20% {
-    background-position: -96px -48px;
-  }
-  39.99% {
-    background-position: -96px -48px;
-  }
-  40% {
-    background-position: -64px -48px;
-  }
-  59.99% {
-    background-position: -64px -48px;
-  }
-  60% {
-    background-position: -32px -48px;
-  }
-  79.99% {
-    background-position: -32px -48px;
-  }
-  80% {
-    background-position: 0 -48px;
-  }
-  100% {
-    background-position: 0 -48px;
-  }
-}
-
-@-webkit-keyframes green-brick-leave {
-  0% {
-    background-position: 0 -48px;
-  }
-  19.99% {
-    background-position: 0 -48px;
-  }
-  20% {
-    background-position: -32px -48px;
-  }
-  39.99% {
-    background-position: -32px -48px;
-  }
-  40% {
-    background-position: -64px -48px;
-  }
-  59.99% {
-    background-position: -64px -48px;
-  }
-  60% {
-    background-position: -96px -48px;
-  }
-  79.99% {
-    background-position: -96px -48px;
-  }
-  80% {
-    background-position: -128px -48px;
-  }
-  100% {
-    background-position: -128px -48px;
-  }
-}
-
-@-moz-keyframes green-brick-enter {
-  0% {
-    background-position: -128px -48px;
-  }
-  19.99% {
-    background-position: -128px -48px;
-  }
-  20% {
-    background-position: -96px -48px;
-  }
-  39.99% {
-    background-position: -96px -48px;
-  }
-  40% {
-    background-position: -64px -48px;
-  }
-  59.99% {
-    background-position: -64px -48px;
-  }
-  60% {
-    background-position: -32px -48px;
-  }
-  79.99% {
-    background-position: -32px -48px;
-  }
-  80% {
-    background-position: 0 -48px;
-  }
-  100% {
-    background-position: 0 -48px;
-  }
-}
-
-@-moz-keyframes green-brick-leave {
-  0% {
-    background-position: 0 -48px;
-  }
-  19.99% {
-    background-position: 0 -48px;
-  }
-  20% {
-    background-position: -32px -48px;
-  }
-  39.99% {
-    background-position: -32px -48px;
-  }
-  40% {
-    background-position: -64px -48px;
-  }
-  59.99% {
-    background-position: -64px -48px;
-  }
-  60% {
-    background-position: -96px -48px;
-  }
-  79.99% {
-    background-position: -96px -48px;
-  }
-  80% {
-    background-position: -128px -48px;
-  }
-  100% {
-    background-position: -128px -48px;
-  }
+  -o-animation-iteration-count: infinite;
+  -ms-animation-iteration-count: infinite;
+  animation-timing-function: steps(4);
+  -webkit-animation-timing-function: steps(4);
+  -moz-animation-timing-function: steps(4);
+  -o-animation-timing-function: steps(4);
+  -ms-animation-timing-function: steps(4);
+  animation-duration: 0.5s;
+  -webkit-animation-duration: 0.5s;
+  -moz-animation-duration: 0.5s;
+  -o-animation-duration: 0.5s;
+  -ms-animation-duration: 0.5s;
+  animation-name: ball-spin;
+  -webkit-animation-name: ball-spin;
+  -moz-animation-name: ball-spin;
+  -o-animation-name: ball-spin;
+  -ms-animation-name: ball-spin;
 }
 
 .countdown {
-  -webkit-animation-name: countdown;
-  -webkit-animation-duration: 3s;
-  -webkit-animation-iteration-count: 1;
-
-  -moz-animation-name: countdown;
-  -moz-animation-duration: 3s;
-  -moz-animation-iteration-count: 1;
-
   background-position: -64px -96px;
+  animation-timing-function: steps(2);
+  -webkit-animation-timing-function: steps(2);
+  -moz-animation-timing-function: steps(2);
+  -o-animation-timing-function: steps(2);
+  -ms-animation-timing-function: steps(2);
+  animation-iteration-count: 1;
+  -webkit-animation-iteration-count: 1;
+  -moz-animation-iteration-count: 1;
+  -o-animation-iteration-count: 1;
+  -ms-animation-iteration-count: 1;
+  animation-duration: 3s;
+  -webkit-animation-duration: 3s;
+  -moz-animation-duration: 3s;
+  -o-animation-duration: 3s;
+  -ms-animation-duration: 3s;
+  animation-name: countdown;
+  -webkit-animation-name: countdown;
+  -moz-animation-name: countdown;
+  -o-animation-name: countdown;
+  -ms-animation-name: countdown;
+}
+
+.brick.blue.spawn-enter {
+  animation-iteration-count: 1;
+  -webkit-animation-iteration-count: 1;
+  -moz-animation-iteration-count: 1;
+  -o-animation-iteration-count: 1;
+  -ms-animation-iteration-count: 1;
+  animation-duration: 0.33s;
+  -webkit-animation-duration: 0.33s;
+  -moz-animation-duration: 0.33s;
+  -o-animation-duration: 0.33s;
+  -ms-animation-duration: 0.33s;
+  animation-timing-function: steps(4);
+  -webkit-animation-timing-function: steps(4);
+  -moz-animation-timing-function: steps(4);
+  -o-animation-timing-function: steps(4);
+  -ms-animation-timing-function: steps(4);
+  animation-name: blue-brick-spawn;
+  -webkit-animation-name: blue-brick-spawn;
+  -moz-animation-name: blue-brick-spawn;
+  -o-animation-name: blue-brick-spawn;
+  -ms-animation-name: blue-brick-spawn;
+}
+
+.brick.orange.spawn-enter {
+  animation-iteration-count: 1;
+  -webkit-animation-iteration-count: 1;
+  -moz-animation-iteration-count: 1;
+  -o-animation-iteration-count: 1;
+  -ms-animation-iteration-count: 1;
+  animation-duration: 0.33s;
+  -webkit-animation-duration: 0.33s;
+  -moz-animation-duration: 0.33s;
+  -o-animation-duration: 0.33s;
+  -ms-animation-duration: 0.33s;
+  animation-timing-function: steps(4);
+  -webkit-animation-timing-function: steps(4);
+  -moz-animation-timing-function: steps(4);
+  -o-animation-timing-function: steps(4);
+  -ms-animation-timing-function: steps(4);
+  animation-name: orange-brick-spawn;
+  -webkit-animation-name: orange-brick-spawn;
+  -moz-animation-name: orange-brick-spawn;
+  -o-animation-name: orange-brick-spawn;
+  -ms-animation-name: orange-brick-spawn;
+}
+
+.brick.red.spawn-enter {
+  animation-iteration-count: 1;
+  -webkit-animation-iteration-count: 1;
+  -moz-animation-iteration-count: 1;
+  -o-animation-iteration-count: 1;
+  -ms-animation-iteration-count: 1;
+  animation-duration: 0.33s;
+  -webkit-animation-duration: 0.33s;
+  -moz-animation-duration: 0.33s;
+  -o-animation-duration: 0.33s;
+  -ms-animation-duration: 0.33s;
+  animation-timing-function: steps(4);
+  -webkit-animation-timing-function: steps(4);
+  -moz-animation-timing-function: steps(4);
+  -o-animation-timing-function: steps(4);
+  -ms-animation-timing-function: steps(4);
+  animation-name: red-brick-spawn;
+  -webkit-animation-name: red-brick-spawn;
+  -moz-animation-name: red-brick-spawn;
+  -o-animation-name: red-brick-spawn;
+  -ms-animation-name: red-brick-spawn;
+}
+
+.brick.green.spawn-enter {
+  animation-iteration-count: 1;
+  -webkit-animation-iteration-count: 1;
+  -moz-animation-iteration-count: 1;
+  -o-animation-iteration-count: 1;
+  -ms-animation-iteration-count: 1;
+  animation-duration: 0.33s;
+  -webkit-animation-duration: 0.33s;
+  -moz-animation-duration: 0.33s;
+  -o-animation-duration: 0.33s;
+  -ms-animation-duration: 0.33s;
+  animation-timing-function: steps(4);
+  -webkit-animation-timing-function: steps(4);
+  -moz-animation-timing-function: steps(4);
+  -o-animation-timing-function: steps(4);
+  -ms-animation-timing-function: steps(4);
+  animation-name: green-brick-spawn;
+  -webkit-animation-name: green-brick-spawn;
+  -moz-animation-name: green-brick-spawn;
+  -o-animation-name: green-brick-spawn;
+  -ms-animation-name: green-brick-spawn;
+}
+
+.brick.blue.spawn-leave {
+  animation-iteration-count: 1;
+  -webkit-animation-iteration-count: 1;
+  -moz-animation-iteration-count: 1;
+  -o-animation-iteration-count: 1;
+  -ms-animation-iteration-count: 1;
+  animation-duration: 0.33s;
+  -webkit-animation-duration: 0.33s;
+  -moz-animation-duration: 0.33s;
+  -o-animation-duration: 0.33s;
+  -ms-animation-duration: 0.33s;
+  animation-timing-function: steps(4);
+  -webkit-animation-timing-function: steps(4);
+  -moz-animation-timing-function: steps(4);
+  -o-animation-timing-function: steps(4);
+  -ms-animation-timing-function: steps(4);
+  animation-direction: reverse;
+  -webkit-animation-direction: reverse;
+  -moz-animation-direction: reverse;
+  -o-animation-direction: reverse;
+  -ms-animation-direction: reverse;
+  animation-name: blue-brick-spawn;
+  -webkit-animation-name: blue-brick-spawn;
+  -moz-animation-name: blue-brick-spawn;
+  -o-animation-name: blue-brick-spawn;
+  -ms-animation-name: blue-brick-spawn;
+}
+
+.brick.orange.spawn-leave {
+  animation-iteration-count: 1;
+  -webkit-animation-iteration-count: 1;
+  -moz-animation-iteration-count: 1;
+  -o-animation-iteration-count: 1;
+  -ms-animation-iteration-count: 1;
+  animation-duration: 0.33s;
+  -webkit-animation-duration: 0.33s;
+  -moz-animation-duration: 0.33s;
+  -o-animation-duration: 0.33s;
+  -ms-animation-duration: 0.33s;
+  animation-timing-function: steps(4);
+  -webkit-animation-timing-function: steps(4);
+  -moz-animation-timing-function: steps(4);
+  -o-animation-timing-function: steps(4);
+  -ms-animation-timing-function: steps(4);
+  animation-direction: reverse;
+  -webkit-animation-direction: reverse;
+  -moz-animation-direction: reverse;
+  -o-animation-direction: reverse;
+  -ms-animation-direction: reverse;
+  animation-name: orange-brick-spawn;
+  -webkit-animation-name: orange-brick-spawn;
+  -moz-animation-name: orange-brick-spawn;
+  -o-animation-name: orange-brick-spawn;
+  -ms-animation-name: orange-brick-spawn;
+}
+
+.brick.red.spawn-leave {
+  animation-iteration-count: 1;
+  -webkit-animation-iteration-count: 1;
+  -moz-animation-iteration-count: 1;
+  -o-animation-iteration-count: 1;
+  -ms-animation-iteration-count: 1;
+  animation-duration: 0.33s;
+  -webkit-animation-duration: 0.33s;
+  -moz-animation-duration: 0.33s;
+  -o-animation-duration: 0.33s;
+  -ms-animation-duration: 0.33s;
+  animation-timing-function: steps(4);
+  -webkit-animation-timing-function: steps(4);
+  -moz-animation-timing-function: steps(4);
+  -o-animation-timing-function: steps(4);
+  -ms-animation-timing-function: steps(4);
+  animation-direction: reverse;
+  -webkit-animation-direction: reverse;
+  -moz-animation-direction: reverse;
+  -o-animation-direction: reverse;
+  -ms-animation-direction: reverse;
+  animation-name: red-brick-spawn;
+  -webkit-animation-name: red-brick-spawn;
+  -moz-animation-name: red-brick-spawn;
+  -o-animation-name: red-brick-spawn;
+  -ms-animation-name: red-brick-spawn;
+}
+
+.brick.green.spawn-leave {
+  animation-iteration-count: 1;
+  -webkit-animation-iteration-count: 1;
+  -moz-animation-iteration-count: 1;
+  -o-animation-iteration-count: 1;
+  -ms-animation-iteration-count: 1;
+  animation-duration: 0.33s;
+  -webkit-animation-duration: 0.33s;
+  -moz-animation-duration: 0.33s;
+  -o-animation-duration: 0.33s;
+  -ms-animation-duration: 0.33s;
+  animation-timing-function: steps(4);
+  -webkit-animation-timing-function: steps(4);
+  -moz-animation-timing-function: steps(4);
+  -o-animation-timing-function: steps(4);
+  -ms-animation-timing-function: steps(4);
+  animation-direction: reverse;
+  -webkit-animation-direction: reverse;
+  -moz-animation-direction: reverse;
+  -o-animation-direction: reverse;
+  -ms-animation-direction: reverse;
+  animation-name: green-brick-spawn;
+  -webkit-animation-name: green-brick-spawn;
+  -moz-animation-name: green-brick-spawn;
+  -o-animation-name: green-brick-spawn;
+  -ms-animation-name: green-brick-spawn;
+}
+
+@keyframes ball-spin {
+
+  from {
+    background-position: -48px -64px;
+  }
+  
+  to {
+    background-position: -112px -64px;
+  }
+
+}
+
+@-webkit-keyframes ball-spin {
+
+  from {
+    background-position: -48px -64px;
+  }
+  
+  to {
+    background-position: -112px -64px;
+  }
+
+}
+
+@-moz-keyframes ball-spin {
+
+  from {
+    background-position: -48px -64px;
+  }
+  
+  to {
+    background-position: -112px -64px;
+  }
+
+}
+
+@-o-keyframes ball-spin {
+
+  from {
+    background-position: -48px -64px;
+  }
+  
+  to {
+    background-position: -112px -64px;
+  }
+
+}
+
+@-ms-keyframes ball-spin {
+
+  from {
+    background-position: -48px -64px;
+  }
+  
+  to {
+    background-position: -112px -64px;
+  }
+
+}
+
+@keyframes blue-brick-spawn {
+
+  from {
+    background-position: -128px 0;
+  }
+  
+  to {
+    background-position: 0 0;
+  }
+
+}
+
+@-webkit-keyframes blue-brick-spawn {
+
+  from {
+    background-position: -128px 0;
+  }
+  
+  to {
+    background-position: 0 0;
+  }
+
+}
+
+@-moz-keyframes blue-brick-spawn {
+
+  from {
+    background-position: -128px 0;
+  }
+  
+  to {
+    background-position: 0 0;
+  }
+
+}
+
+@-o-keyframes blue-brick-spawn {
+
+  from {
+    background-position: -128px 0;
+  }
+  
+  to {
+    background-position: 0 0;
+  }
+
+}
+
+@-ms-keyframes blue-brick-spawn {
+
+  from {
+    background-position: -128px 0;
+  }
+  
+  to {
+    background-position: 0 0;
+  }
+
+}
+
+@keyframes orange-brick-spawn {
+
+  from {
+    background-position: -128px -16px;
+  }
+  
+  to {
+    background-position: 0 -16px;
+  }
+
+}
+
+@-webkit-keyframes orange-brick-spawn {
+
+  from {
+    background-position: -128px -16px;
+  }
+  
+  to {
+    background-position: 0 -16px;
+  }
+
+}
+
+@-moz-keyframes orange-brick-spawn {
+
+  from {
+    background-position: -128px -16px;
+  }
+  
+  to {
+    background-position: 0 -16px;
+  }
+
+}
+
+@-o-keyframes orange-brick-spawn {
+
+  from {
+    background-position: -128px -16px;
+  }
+  
+  to {
+    background-position: 0 -16px;
+  }
+
+}
+
+@-ms-keyframes orange-brick-spawn {
+
+  from {
+    background-position: -128px -16px;
+  }
+  
+  to {
+    background-position: 0 -16px;
+  }
+
+}
+
+@keyframes red-brick-spawn {
+
+  from {
+    background-position: -128px -32px;
+  }
+  
+  to {
+    background-position: 0 -32px;
+  }
+
+}
+
+@-webkit-keyframes red-brick-spawn {
+
+  from {
+    background-position: -128px -32px;
+  }
+  
+  to {
+    background-position: 0 -32px;
+  }
+
+}
+
+@-moz-keyframes red-brick-spawn {
+
+  from {
+    background-position: -128px -32px;
+  }
+  
+  to {
+    background-position: 0 -32px;
+  }
+
+}
+
+@-o-keyframes red-brick-spawn {
+
+  from {
+    background-position: -128px -32px;
+  }
+  
+  to {
+    background-position: 0 -32px;
+  }
+
+}
+
+@-ms-keyframes red-brick-spawn {
+
+  from {
+    background-position: -128px -32px;
+  }
+  
+  to {
+    background-position: 0 -32px;
+  }
+
+}
+
+@keyframes green-brick-spawn {
+
+  from {
+    background-position: -128px -48px;
+  }
+  
+  to {
+    background-position: 0 -48px;
+  }
+
+}
+
+@-webkit-keyframes green-brick-spawn {
+
+  from {
+    background-position: -128px -48px;
+  }
+  
+  to {
+    background-position: 0 -48px;
+  }
+
+}
+
+@-moz-keyframes green-brick-spawn {
+
+  from {
+    background-position: -128px -48px;
+  }
+  
+  to {
+    background-position: 0 -48px;
+  }
+
+}
+
+@-o-keyframes green-brick-spawn {
+
+  from {
+    background-position: -128px -48px;
+  }
+  
+  to {
+    background-position: 0 -48px;
+  }
+
+}
+
+@-ms-keyframes green-brick-spawn {
+
+  from {
+    background-position: -128px -48px;
+  }
+  
+  to {
+    background-position: 0 -48px;
+  }
+
+}
+
+@keyframes countdown {
+
+  from {
+    background-position: 0 -96px;
+  }
+  
+  to {
+    background-position: -64px -96px;
+  }
+
 }
 
 @-webkit-keyframes countdown {
-  0% {
+
+  from {
     background-position: 0 -96px;
   }
-  32.99% {
-    background-position: 0 -96px;
-  }
-  33% {
-    background-position: -32px -96px;
-  }
-  65.99% {
-    background-position: -32px -96px;
-  }
-  66% {
+  
+  to {
     background-position: -64px -96px;
   }
-  100% {
-    background-position: -64px -96px;
-  }
+
 }
 
 @-moz-keyframes countdown {
-  0% {
+
+  from {
     background-position: 0 -96px;
   }
-  32.99% {
+  
+  to {
+    background-position: -64px -96px;
+  }
+
+}
+
+@-o-keyframes countdown {
+
+  from {
     background-position: 0 -96px;
   }
-  33% {
-    background-position: -32px -96px;
-  }
-  65.99% {
-    background-position: -32px -96px;
-  }
-  66% {
+  
+  to {
     background-position: -64px -96px;
   }
-  100% {
+
+}
+
+@-ms-keyframes countdown {
+
+  from {
+    background-position: 0 -96px;
+  }
+  
+  to {
     background-position: -64px -96px;
   }
-}
 
-#board {
-  cursor: none;
-}
-
-#info {
-  width: 320px;
-  margin: 60px auto 0px auto;
-  color: white
-}
-
-#info a, #info a:visited, #info a:hover, #info a:active {
-  color: orange;
-  text-decoration: none;
 }
