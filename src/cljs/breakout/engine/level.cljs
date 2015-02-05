@@ -15,6 +15,7 @@
 (def starting-ball-pos {:x (* 2 tile-size) :y (* 15 tile-size)})
 (def base-vel (/ 120 1000)) ; 120 pixels per second
 (def starting-ball-vel {:x base-vel :y base-vel})
+(def total-countdown-duration 3500)
 
 ;; --- state, there's a lot of it (this is a game after all)
 (def phase (atom nil))
@@ -28,7 +29,7 @@
 (def paddle-pos (atom {:x 0 :y paddle-y}))
 (def ball-pos (atom starting-ball-pos))
 (def ball-vel (atom starting-ball-vel))
-(def countdown-duration (atom 3000))
+(def countdown-duration (atom total-countdown-duration))
 
 ;; --- collision related
 ;; these functions detect collision and are called from update-state! :gameplay
@@ -106,7 +107,7 @@
 
 (defmethod init-phase! :countdown [_]
   (reset! ball-pos starting-ball-pos)
-  (reset! countdown-duration 3000))
+  (reset! countdown-duration total-countdown-duration))
 
 (defmethod init-phase! :gameplay [_]
   (reset! ball-pos starting-ball-pos)

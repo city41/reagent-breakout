@@ -4,14 +4,13 @@
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
 
-  :source-paths ["src/clj" "src/cljs"]
-
   :dependencies [[org.clojure/clojure "1.6.0"]
                  [cljsjs/react-with-addons "0.12.2-3"]
                  [reagent "0.4.3"]
                  [secretary "1.2.1"]
                  [org.clojure/clojurescript "0.0-2727" :scope "provided"]
                  [org.clojure/core.async "0.1.346.0-17112a-alpha"]
+                 [garden "1.2.5"]
                  [com.cemerick/piggieback "0.1.5"]
                  [weasel "0.5.0"]
                  [ring "1.3.2"]
@@ -24,10 +23,13 @@
                  [figwheel "0.1.6-SNAPSHOT"]]
 
   :plugins [[lein-vanity "0.2.0"]
+            [lein-garden "0.2.5"]
             [lein-cljsbuild "1.0.4"]
             [lein-environ "1.0.0"]
             [lein-ring "0.9.0"]
             [lein-asset-minifier "0.2.2"]]
+
+  :source-paths ["src/clj" "src/cljs"]
 
   :ring {:handler breakout.handler/app
          :uberwar-name "reagent-breakout.war"}
@@ -43,6 +45,14 @@
   :minify-assets
   {:assets
     {"resources/public/css/site.min.css" "resources/public/css/site.css"}}
+
+  :garden {:builds [{:id "prod"
+                     :source-paths ["src/clj"]
+                     :stylesheet breakout.style/stylesheet
+                     :compiler {
+                                :vendors ["webkit" "moz" "o" "ms"]
+                                :output-to "resources/public/css/site.css"
+                                :pretty-print? true}}]}
 
   :cljsbuild {:builds {:app {:source-paths ["src/cljs"]
                              :compiler {:output-to     "resources/public/js/app.dev.js"
@@ -73,9 +83,7 @@
                    :env {:dev? true}
 
                    :cljsbuild {:builds {:app {:source-paths ["env/dev/cljs"]
-                                              :compiler {:source-map false}}
-}
-}}
+                                              :compiler {:source-map false}}}}}
 
              :production {:cljsbuild {:builds {:app
                                              {:source-paths ["env/prod/cljs"]
@@ -84,6 +92,9 @@
                                                :output-to "resources/public/js/app.min.js"
                                                :main breakout/prod
                                                :output-dir nil
-                                               :pretty-print false}}}}}
+                                               :pretty-print false}}}}}}
 
-             })
+  :aliases {"build-prod" ["do"
+                          ["clean"]
+                          ["with-profile" "production" "cljsbuild" "once" "app"]
+                          ["garden" "once"]]})
