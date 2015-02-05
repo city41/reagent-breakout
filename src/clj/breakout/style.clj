@@ -61,6 +61,14 @@
     :margin-left :auto
     :margin-right :auto
     :margin-top (px 60)}]
+
+  [:#info
+   {:width (px 320)
+    :margin [[(px 60) :auto 0 :auto]]
+    :color "white"}
+   [:a :a:visited :a:hover :a:active
+    {:color "orange"
+     :text-decoration :none}]]
   
   [:.ball
    {:background-position [[(px -48) (px -64)]]}
