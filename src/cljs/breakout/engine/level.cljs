@@ -2,7 +2,7 @@
   (:require-macros [cljs.core.async.macros :refer [go]])
   (:require [cljs.core.async :refer [<!]]
             [reagent.core :refer [atom]]
-            [breakout.engine.mouse :as mouse]
+            [breakout.engine.input :as input]
             [breakout.levels.data :as levels])
   (:import goog.math.Rect))
 
@@ -159,14 +159,11 @@
       (update-phase! delta @phase))
     (. js/window (requestAnimationFrame update!))))
 
-(defn- listen-to-mouse-moves! []
-  (let [chan (mouse/listen-to-movement)
-        clamp (fn [v vmin vmax]
-                (min vmax (max v vmin)))]
-    (go (while @running
-          (let [mouse-x (<! chan)
-                mouse-x (clamp mouse-x 0 (- 320 48))]
-            (swap! paddle-pos assoc :x mouse-x))))))
+(defn- listen-to-input-moves []
+  (go
+    (while @running
+      (let [input-x (<! input/movement)]
+        (swap! paddle-pos assoc :x input-x)))))
 
 
 (defn- init! []
@@ -181,7 +178,7 @@
 (defn start! [set-next-scene!]
   (reset! next-scene! set-next-scene!)
   (init!)
-  (listen-to-mouse-moves!)
+  (listen-to-input-moves)
   (. js/window (requestAnimationFrame update!)))
 
 (defn stop! []
